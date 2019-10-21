@@ -178,7 +178,6 @@ class TestRedisCommands(object):
         clients = r.client_list()
         # we don't know which client ours will be
         assert 'redis_py_test' in [c['name'] for c in clients]
-
     @skip_if_server_version_lt('2.9.50')
     def test_client_pause(self, r):
         assert r.client_pause(1)
